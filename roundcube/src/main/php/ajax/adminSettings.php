@@ -56,7 +56,7 @@ if (isset($_POST['appname']) && $_POST['appname'] == "roundcube") {
 			} else if ($param == 'rcRefreshInterval') {
 				$refresh = trim($_POST[$param]);
 				if ($refresh == '') {
-					OC_Appconfig::deleteKey('roundcube', $param);
+					\OCP\Util::connectHook('OC_Appconfig', 'deleteKey', 'roundcube', $param);
 				} else if (!is_numeric($refresh)) {
 					OC_JSON::error(array(
 					"data" => array(
