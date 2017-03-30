@@ -548,7 +548,7 @@ class OC_RoundCube_App
 
     public static function saveUserSettings($appName, $ocUser, $rcUser, $rcPassword)
     {
-        $l = new OC_L10N('roundcube');
+        $l = OC::$server->getL10N('roundcube');
         
         if (isset($appName) && $appName == "roundcube") {
             $result = self::cryptEmailIdentity($ocUser, $rcUser, $rcPassword, true);
