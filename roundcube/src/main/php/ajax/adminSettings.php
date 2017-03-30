@@ -8,7 +8,7 @@ OCP\User::checkAdminUser();
 // CSRF checks
 OCP\JSON::callCheck();
 
-$l = new OC_L10N('roundcube');
+$l = OC::$server->getL10N('roundcube');
 
 $params = array('maildir', 'removeHeaderNav', 'removeControlNav', 'autoLogin', 'noSSLverify', 'enableDebug', 'rcHost', 'rcPort', 'rcInternalAddress', 'rcRefreshInterval');
 
